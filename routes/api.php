@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarkertController;
 use App\Http\Controllers\PolygonController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('markerts', MarkertController::class);
 Route::apiResource('polygons', PolygonController::class);
+Route::apiResource('menus', MenuController::class);
+Route::get('/menus-all', [MenuController::class, 'getAll']);

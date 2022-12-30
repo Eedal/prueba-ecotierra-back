@@ -16,13 +16,12 @@ class PolygonController extends Controller
 
     public function store(Request $request)
     {
-        $polygon = Polygon::create(["name" => $request->name]);
+        $polygon = Polygon::create();
 
-        foreach ($request->markerts as $ket => $value) {
+        foreach ($request->all() as $ket => $value) {
             $market = Markert::create($value);
             $market->polygon_id = $polygon->id;
             $market->save();
-            // return $value;
         }
 
         return $polygon->markerts;

@@ -10,9 +10,7 @@ class Polygon extends Model
 
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-    ];
+    protected $fillable = [];
 
 
     public function markerts()

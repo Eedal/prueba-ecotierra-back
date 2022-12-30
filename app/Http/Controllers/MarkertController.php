@@ -10,7 +10,7 @@ class MarkertController extends Controller
 {
     public function index()
     {
-        return Markert::all();
+        return Markert::where('polygon_id', null)->get();
     }
 
     public function store(Request $request)
